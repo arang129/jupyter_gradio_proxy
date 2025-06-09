@@ -1,21 +1,8 @@
-"""
-Return config on servers to start web services from JupyterLab
-
-See https://jupyter-server-proxy.readthedocs.io/en/latest/server-process.html
-for more information.
-"""
-
 import os
 
-
 def setup_notes_proxy():
-    """
-    Proxy wrapper to launch Streamlit from JupyterHub on Binder
+    """ Proxy wrapper to launch Streamlit from JupyterHub """
 
-    Note that a shell script that launches the actual Streamlit application is expected at
-    /home/jovyan/run_streamlit.sh
-    The script must accept additional command line flags being passed to streamlit, see below.
-    """
     return {
         'command': [
             "streamlit", "run", "/home/jupyter-data/notes/teaching_notes.py",
@@ -25,11 +12,14 @@ def setup_notes_proxy():
             "--server.headless", "true",
             "--server.enableCORS", "false",
             "--server.enableXsrfProtection", "false",
+            "--server.maxUploadSize", "10",       # 限制檔案上傳大小 (MB)
+            "--server.maxMessageSize", "100",     # 限制訊息大小 (MB)
         ],
         'environment': {},
-        'timeout': 30.0,
+        'timeout': 60.0,  # timeout 由30增加至60秒，防止資源爭搶造成的timeout
         'launcher_entry': {
             'title': '上課講義',
             'icon_path': os.path.join(os.path.dirname(os.path.abspath(__file__)), 'icons', 'notes.svg'),
         }
     }
+
