@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name="jupyter-notes-proxy",
-    version='0.0.39',
+    version='0.0.40',
     url="https://gitlab.mpcdf.mpg.de/khr/jupyter-streamlit-proxy",
     author="Klaus Reuter",
     description="klaus.reuter@mpcdf.mpg.de",
