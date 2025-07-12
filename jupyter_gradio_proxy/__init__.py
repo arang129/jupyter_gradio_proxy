@@ -5,7 +5,7 @@ def setup_gradio_proxy():
 
     return {
         'command': [
-            "python", "/home/jupyter-data/webapp/gradio/gradio_app.py",
+            "python", "/home/jupyter-data/webapp/gradio/gradio_app.py", "--no-browser"
         ],
         'port':7860,
         'absolute_url': False,
