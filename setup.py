@@ -1,8 +1,8 @@
 import setuptools
 
 setuptools.setup(
-    name="jupyter-notes-proxy",
-    version='0.0.40',
+    name="jupyter-gradio-proxy",
+    version='0.0.1',
     url="https://gitlab.mpcdf.mpg.de/khr/jupyter-streamlit-proxy",
     author="Klaus Reuter",
     description="klaus.reuter@mpcdf.mpg.de",
@@ -14,10 +14,10 @@ setuptools.setup(
     ],
     entry_points={
         'jupyter_serverproxy_servers': [
-            'notes = jupyter_notes_proxy:setup_notes_proxy',
+            'gradio = jupyter_gradio_proxy:setup_gradio_proxy',
         ]
     },
     package_data={
-        'jupyter_notes_proxy': ['icons/*'],
+        'jupyter_gradio_proxy': ['icons/*'],
     },
 )
