@@ -13,6 +13,6 @@ def setup_gradio_proxy():
         'launcher_entry': {
             'enabled': True,
             'title': 'Gradio',
-            'icon_path': os.path.join(os.path.dirname(os.path.abspath(__file__)), 'icons', 'notes.svg'),
+            'icon_path': os.path.join(os.path.dirname(os.path.abspath(__file__)), 'icons', 'gradio.svg'),
         }
     }
